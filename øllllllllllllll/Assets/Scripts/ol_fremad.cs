@@ -25,6 +25,7 @@ public class ol_speed : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            other.gameObject.transform.parent.GetComponent<spawnManger>().checkifDead++;
             Destroy(other.gameObject);
             Destroy(gameObject);
             
