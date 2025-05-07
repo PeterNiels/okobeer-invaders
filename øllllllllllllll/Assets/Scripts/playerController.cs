@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -6,9 +8,10 @@ using UnityEngine.UIElements;
 public class playerController : MonoBehaviour
 {
     private float horizantalInput;
+    private bool klar = true;
     public float speed = 1f;
     public float range = 10f;
-    public bool klar;
+    public float delay = 2f;
     public GameObject ol;
 
 
@@ -32,12 +35,21 @@ public class playerController : MonoBehaviour
         {
             transform.position = new Vector3(-range, transform.position.y, transform.position.z);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && klar)
         {
             Instantiate(ol, transform.position, transform.rotation);
-            klar = false;
+            StartCoroutine(SkudDelayRutine());
         }
+        
 
-
+    }
+    IEnumerator SkudDelayRutine()
+    {
+        if (klar)
+        {
+            klar = false;
+            yield return new WaitForSeconds(delay);
+            klar = true;
+        }
     }
 }
