@@ -13,9 +13,9 @@ public class playerController : MonoBehaviour
     public float range = 10f;
     public float delay = 2f;
     public GameObject ol;
+    public int health = 3;
 
 
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,5 +51,23 @@ public class playerController : MonoBehaviour
             yield return new WaitForSeconds(delay);
             klar = true;
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Frugt"))
+        {
+            if (health >= 0)
+            {
+                health--;
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+
+        }
+
     }
 }
