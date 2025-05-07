@@ -250,7 +250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 10
-  "\xF8l": {fileID: 4813632870907601442, guid: 4c2d0cf24c20d554b9d7ecf51f546f79, type: 3}
+  klar: 1
+  delay: 2
+  ol: {fileID: 4813632870907601442, guid: 4c2d0cf24c20d554b9d7ecf51f546f79, type: 3}
 --- !u!65 &666468740
 BoxCollider:
   m_ObjectHideFlags: 0
