@@ -1,8 +1,5 @@
 using System.Collections;
-
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class playerController : MonoBehaviour
 {
@@ -13,6 +10,7 @@ public class playerController : MonoBehaviour
     public float delay = 2f;
     public GameObject ol;
     public int health = 3;
+    public UI UI;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,15 +53,17 @@ public class playerController : MonoBehaviour
     {
         if (other.CompareTag("Frugt"))
         {
-            if (health >= 0)
+            if (health >= 2)
             {
                 health--;
+                UI.UpdateHealth(health);
                 Destroy(other.gameObject);
             }
             else
             {
                 Destroy(gameObject);
                 Destroy(other.gameObject);
+
             }
 
         }

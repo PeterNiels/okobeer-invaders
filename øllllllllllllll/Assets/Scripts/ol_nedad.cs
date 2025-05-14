@@ -25,7 +25,6 @@ public class ol_nedad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-
         }
 
     }

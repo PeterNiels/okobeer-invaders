@@ -1,12 +1,11 @@
 using UnityEngine;
 using System.Collections;
-using static UnityEngine.GraphicsBuffer;
 
 public class frugt_Nedad : MonoBehaviour
 {
     public GameObject frugt;
-    public float spawnIntervalNedre = 2f;
-    public float spawnIntervalovre = 8f;
+    private float spawnIntervalNedre = 5f;
+    private float spawnIntervalovre = 15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()

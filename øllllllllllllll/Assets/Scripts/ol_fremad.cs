@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class ol_speed : MonoBehaviour
 {
-    public float speed = 1.0f;
-    public float outOfBounds = 10f;
+    private float speed = 10.0f;
+    private float outOfBounds = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,7 +30,6 @@ public class ol_speed : MonoBehaviour
             other.gameObject.transform.parent.GetComponent<spawnManger>().checkifDead++;
             Destroy(other.gameObject);
             Destroy(gameObject);
-            
         }
         
     }
