@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class ol_speed : MonoBehaviour
+public class ol_nedad : MonoBehaviour
 {
     public float speed = 1.0f;
-    public float outOfBounds = 10f;
+    private float outOfBounds = -10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,23 +13,21 @@ public class ol_speed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        
-        if (transform.position.z > outOfBounds)
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * -1);
+
+        if (transform.position.z < outOfBounds)
         {
             Destroy(gameObject);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.transform.parent.GetComponent<spawnManger>().checkifDead++;
-            Destroy(other.gameObject);
             Destroy(gameObject);
-            
+
         }
-        
+
     }
 
 }

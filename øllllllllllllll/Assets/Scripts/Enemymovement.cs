@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class movement : MonoBehaviour
+public class Enemymovement : MonoBehaviour
 {
     public float speed = 3;
     public float spawnIntervalNedre = 2f;
@@ -14,7 +14,6 @@ public class movement : MonoBehaviour
     private void Start()
     {
         d = target;
-        StartCoroutine(SkudDelayRutine());
     }
     // Update is called once per frame
     private void Update()
@@ -29,17 +28,5 @@ public class movement : MonoBehaviour
         {
             d = target;
         }
-    }
-    private float Skud()
-    {
-        float spawnInterval = Random.Range(spawnIntervalNedre, spawnIntervalovre);
-        return spawnInterval;
-    }
-    IEnumerator SkudDelayRutine()
-    {
-        float Delay = Skud();
-        yield return new WaitForSeconds(Delay);
-        Instantiate(frugt, transform.position, transform.rotation);
-        StartCoroutine(SkudDelayRutine());
     }
 }

@@ -9,7 +9,7 @@ public class spawnManger : MonoBehaviour
     public int checkifDead = 0;
     void Update()
     {
-       if (checkifDead == 7 )
+       if (checkifDead == 8 )
        {
         SceneManager.LoadScene(0);
        }

@@ -1,28 +1,30 @@
 using UnityEngine;
+using System.Collections;
+using static UnityEngine.GraphicsBuffer;
 
 public class frugt_Nedad : MonoBehaviour
 {
-    public float speed = 1.0f;
-    public float outOfBounds = -10f;
-    public int health = 3;
+    public GameObject frugt;
+    public float spawnIntervalNedre = 2f;
+    public float spawnIntervalovre = 8f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-
+        StartCoroutine(SkudDelayRutine());
+    }
+    private float Skud()
+    {
+        float spawnInterval = Random.Range(spawnIntervalNedre, spawnIntervalovre);
+        return spawnInterval;
+    }
+    IEnumerator SkudDelayRutine()
+    {
+        float Delay = Skud();
+        yield return new WaitForSeconds(Delay);
+        Instantiate(frugt, transform.position, transform.rotation);
+        StartCoroutine(SkudDelayRutine());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        transform.Translate(Vector3.forward * -1 * speed * Time.deltaTime);
-
-        if (transform.position.z < outOfBounds)
-        {
-            Destroy(gameObject);
-        }
-    }
-    
 
 }

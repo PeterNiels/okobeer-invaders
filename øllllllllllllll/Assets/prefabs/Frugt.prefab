@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7364618375327600046}
   - component: {fileID: 3078712454894682584}
   - component: {fileID: 4245751021329715393}
-  - component: {fileID: 8323907824541804281}
+  - component: {fileID: 8297424711396590238}
   m_Layer: 0
   m_Name: Frugt
   m_TagString: Frugt
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8323907824541804281
+--- !u!114 &8297424711396590238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,9 +118,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4048992591933649614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a1ccd955ed9c248be6507fe9aa9ca4, type: 3}
+  m_Script: {fileID: 11500000, guid: ff8a5ed3f7d951043be5bad760f43ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  outOfBounds: -10
-  health: 3
+  speed: 1
+  outOfBounds: 10
